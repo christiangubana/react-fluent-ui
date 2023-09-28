@@ -1,4 +1,5 @@
 import React from "react";
+import TaskListStyle from "./TaskList.style";
 
 interface ITaskProps {
   id: number;
@@ -16,10 +17,10 @@ const TaskList = () => {
       title: "Task 2",
     },
   ];
-  const onRenderTasks = (task: any) => {
+  const onRenderTasks = (task: ITaskProps) => {
     return <div key={task.id}>{task.title}</div>;
   };
-  return <div>{tasks.map(onRenderTasks)}</div>;
+  return <div className={TaskListStyle.taskItem}>{tasks.map(onRenderTasks)}</div>;
 };
 
 export default TaskList;
