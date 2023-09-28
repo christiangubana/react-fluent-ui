@@ -1,4 +1,9 @@
 {
     "header": "Todo List 2023",
-    "_header.commment" : "This string is for header"
+    "_header.commment" : "This string is for header",
+    "pivots" : {
+        "taskTab" : "Tasks",
+        "taskFormTab" : "Task Form",
+        "completedTaskTab" : "completed"
+    }
 }

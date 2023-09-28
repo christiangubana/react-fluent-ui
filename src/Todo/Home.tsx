@@ -18,13 +18,13 @@ const Home = () => {
            setSelectedKey(item?.props.itemKey || PivotKeysEnum.Tasks)
         }}
       >
-        <PivotItem headerText="My Files" itemKey={PivotKeysEnum.Tasks}>
+        <PivotItem headerText={TodoString.pivots.taskTab} itemKey={PivotKeysEnum.Tasks}>
           <Label>Pivot #1</Label>
         </PivotItem>
-        <PivotItem headerText="Recent" itemKey={PivotKeysEnum.TaskForm}>
+        <PivotItem headerText={TodoString.pivots.taskFormTab} itemKey={PivotKeysEnum.TaskForm}>
           <Label>Pivot #2</Label>
         </PivotItem>
-        <PivotItem headerText="Shared with me" itemKey={PivotKeysEnum.Completed}>
+        <PivotItem headerText={TodoString.pivots.completedTaskTab} itemKey={PivotKeysEnum.Completed}>
           <Label>Pivot #3</Label>
         </PivotItem>
       </Pivot>
