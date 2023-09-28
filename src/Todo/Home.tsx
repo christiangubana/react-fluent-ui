@@ -5,7 +5,7 @@ import TodoString from "./String.json";
 import { PivotKeysEnum } from "./Types";
 
 const Home = () => {
-    const [selectedKey, setSelectedKey] = useState("1")
+    const [selectedKey, setSelectedKey] = useState<string>(PivotKeysEnum.Tasks)
   return (
     <div className={HomeStyle.todoContainer}>
       <header>
@@ -15,7 +15,7 @@ const Home = () => {
         aria-label="Override Selected Item Pivot Example"
         selectedKey={String(selectedKey)} styles={{root: HomeStyle.pivotRoot}}
         onLinkClick={(item?: PivotItem) => {
-           setSelectedKey(item?.props.itemKey || "0")
+           setSelectedKey(item?.props.itemKey || PivotKeysEnum.Tasks)
         }}
       >
         <PivotItem headerText="My Files" itemKey={PivotKeysEnum.Tasks}>
