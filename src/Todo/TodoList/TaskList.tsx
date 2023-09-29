@@ -1,5 +1,6 @@
 import React from "react";
 import TaskListStyle from "./TaskList.style";
+import { Checkbox, FontIcon, Stack } from "@fluentui/react";
 
 interface ITaskProps {
   id: number;
@@ -18,9 +19,19 @@ const TaskList = () => {
     },
   ];
   const onRenderTasks = (task: ITaskProps) => {
-    return <div key={task.id}>{task.title}</div>;
+    return (
+      <Stack horizontal key={task.id} className={TaskListStyle.taskItem}>
+       <Stack horizontal style={{ width: '85%'}}>
+       <Checkbox />
+        {task.title}
+       </Stack>
+        <Stack horizontal style={{ width: '15%'}}>
+        <FontIcon iconName="CompassNW" className={TaskListStyle.iconStyle} />
+        </Stack>
+      </Stack>
+    );
   };
-  return <div className={TaskListStyle.taskItem}>{tasks.map(onRenderTasks)}</div>;
+  return <div>{tasks.map(onRenderTasks)}</div>;
 };
 
 export default TaskList;

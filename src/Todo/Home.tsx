@@ -5,6 +5,9 @@ import TodoString from "./String.json";
 import { PivotKeysEnum } from "./Types";
 import TaskList from "./TodoList/TaskList";
 
+import { initializeIcons } from '@fluentui/font-icons-mdl2';
+initializeIcons();
+
 const Home = () => {
   const [selectedKey, setSelectedKey] = useState<string>(PivotKeysEnum.Tasks);
   return (
