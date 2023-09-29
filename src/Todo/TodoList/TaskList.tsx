@@ -5,6 +5,7 @@ import { Checkbox, FontIcon, Stack } from "@fluentui/react";
 interface ITaskProps {
   id: number;
   title: string;
+  isFav: boolean;
 }
 
 const TaskList = () => {
@@ -12,10 +13,12 @@ const TaskList = () => {
     {
       id: 1,
       title: "Task 1",
+      isFav: true
     },
     {
       id: 2,
       title: "Task 2",
+      isFav: false
     },
   ];
   const onRenderTasks = (task: ITaskProps) => {
@@ -26,7 +29,10 @@ const TaskList = () => {
         {task.title}
        </Stack>
         <Stack horizontal style={{ width: '15%'}}>
-        <FontIcon iconName="CompassNW" className={TaskListStyle.iconStyle} />
+        <FontIcon iconName="Info" className={TaskListStyle.iconStyle} />
+        <FontIcon iconName={task.isFav ? 'FavoriteStar' : 'FavoriteStarFill'} className={TaskListStyle.iconStyle} />
+        <FontIcon iconName="EditNote" className={TaskListStyle.iconStyle} />
+        <FontIcon iconName="Delete" className={TaskListStyle.iconStyle} />
         </Stack>
       </Stack>
     );
